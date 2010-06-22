@@ -14,11 +14,11 @@ Parse::Log::Smbd - parse log.smbd files to fetch usernames and connections to ne
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 =head1 SYNOPSIS
