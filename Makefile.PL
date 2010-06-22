@@ -4,7 +4,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     NAME                => 'Parse::Log::Smbd',
-    AUTHOR              => q{Ari Constancio <affconstancio@gmail.com>},
+    AUTHOR              => q{Ari Constancio <affc@cpan.org>},
     VERSION_FROM        => 'lib/Parse/Log/Smbd.pm',
     ABSTRACT_FROM       => 'lib/Parse/Log/Smbd.pm',
     ($ExtUtils::MakeMaker::VERSION >= 6.3002

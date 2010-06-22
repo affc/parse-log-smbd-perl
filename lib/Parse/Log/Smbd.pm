@@ -99,7 +99,7 @@ sub shares {
 
 =head1 AUTHOR
 
-Ari Constancio, C<< <affconstancio at gmail.com> >>
+Ari Constancio, C<< <affc at cpan.org> >>
 
 =head1 BUGS
 
@@ -139,7 +139,7 @@ L<http://search.cpan.org/dist/Parse-Log-Smbd/>
 
 =head1 ACKNOWLEDGEMENTS
 
-Thanks to the Samba Team L<http://samba.org> for a great software.
+Thanks to the Samba Team (L<http://samba.org>) for a great software.
 
 =head1 LICENSE AND COPYRIGHT
 

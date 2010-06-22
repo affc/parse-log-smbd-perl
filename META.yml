@@ -4,7 +4,7 @@ version:             0.01
 abstract:            parse log.smbd files to fetch usernames and connections to network shares
 license:             perl
 author:              
-    - Ari Constancio <affconstancio@gmail.com>
+    - Ari Constancio <affc@cpan.org>
 generated_by:        ExtUtils::MakeMaker version 6.42
 distribution_type:   module
 requires:     
