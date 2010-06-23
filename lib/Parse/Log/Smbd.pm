@@ -69,6 +69,7 @@ sub _parse_log {
       push @{ $self->{shares} }, $1;
     }
   }
+  return;
 }
 
 =head2 users
@@ -81,7 +82,7 @@ sub users {
   my $self = shift;
 
   undef my %seen;
-  return sort grep(!$seen{$_}++, @{ $self->{users} });
+  return sort grep { !$seen{$_}++ } @{ $self->{users} };
 }
 
 =head2 shares
@@ -94,7 +95,7 @@ sub shares {
   my $self = shift;
 
   undef my %seen;
-  return sort grep(!$seen{$_}++, @{ $self->{shares} });
+  return sort grep { !$seen{$_}++ } @{ $self->{shares} };
 }
 
 =head1 AUTHOR
