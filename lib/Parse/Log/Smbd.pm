@@ -18,8 +18,7 @@ Version 0.02
 
 =cut
 
-our $VERSION = '0.02';
-
+our $VERSION = '0.02_01';
 
 =head1 SYNOPSIS
 
@@ -41,7 +40,7 @@ Creates a new C<Parse::Log::Smbd> object, with the intended log filename as argu
 =cut
 
 sub new {
-    my ($class, $file) = @_;
+    my ( $class, $file ) = @_;
     croak "Log filename missing" unless defined $file;
 
     my $self = {};
@@ -53,23 +52,23 @@ sub new {
 
     _parse_log($self);
 
-    bless ($self, $class);
+    bless( $self, $class );
     return $self;
 }
 
 sub _parse_log {
-  my $self = shift;
-  my $fh = $self->{fh};
+    my $self = shift;
+    my $fh   = $self->{fh};
 
-  while (<$fh>) {
-    if (/authentication for user \[(\w+)\].*?/) {
-      push @{ $self->{users} }, $1;
+    while (<$fh>) {
+        if (/authentication for user \[(\w+)\].*?/) {
+            push @{ $self->{users} }, $1;
+        }
+        if (/connect to service (\w+).*?/) {
+            push @{ $self->{shares} }, $1;
+        }
     }
-    if (/connect to service (\w+).*?/) {
-      push @{ $self->{shares} }, $1;
-    }
-  }
-  return;
+    return;
 }
 
 =head2 users
@@ -79,10 +78,10 @@ Lists users that authenticated successfully to the smbd server. Returns a sorted
 =cut
 
 sub users {
-  my $self = shift;
+    my $self = shift;
 
-  undef my %seen;
-  return sort grep { !$seen{$_}++ } @{ $self->{users} };
+    undef my %seen;
+    return sort grep { !$seen{$_}++ } @{ $self->{users} };
 }
 
 =head2 shares
@@ -92,10 +91,10 @@ Lists successful connections to network shares. Returns a sorted list of unique 
 =cut
 
 sub shares {
-  my $self = shift;
+    my $self = shift;
 
-  undef my %seen;
-  return sort grep { !$seen{$_}++ } @{ $self->{shares} };
+    undef my %seen;
+    return sort grep { !$seen{$_}++ } @{ $self->{shares} };
 }
 
 =head1 AUTHOR
@@ -144,7 +143,7 @@ Thanks to the Samba Team (L<http://samba.org>) for a great software.
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2010 Ari Constancio.
+Copyright 2010-2011 Ari Constancio.
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of either: the GNU General Public License as published
@@ -154,4 +153,4 @@ See http://dev.perl.org/licenses/ for more information.
 
 =cut
 
-1; # End of Parse::Log::Smbd
+1;    # End of Parse::Log::Smbd
