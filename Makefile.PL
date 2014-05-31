@@ -17,6 +17,16 @@ WriteMakefile(
 	'Carp' => 0,
 	'Devel::CheckOS' => 0,
     },
+    META_MERGE => {
+    	'meta-spec' => { version => 2 },
+     	resources => {
+         	repository => {
+           	type => 'git',
+           	url  => 'https://github.com/affc/parse-log-smbd-perl.git',
+           	web  => 'https://github.com/affc/parse-log-smbd-perl',
+     		},
+	},
+    },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'Parse-Log-Smbd-*' },
 );
